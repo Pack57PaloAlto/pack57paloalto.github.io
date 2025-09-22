@@ -1,0 +1,14 @@
+# robots.txt for Pack 57 website
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# No sitemap file
+
+# Discourage crawling of calendar API endpoint caches
+Disallow: /api/
+Disallow: /.git/
+Disallow: /_site/
+Disallow: /_layouts/
+Disallow: /_includes/
