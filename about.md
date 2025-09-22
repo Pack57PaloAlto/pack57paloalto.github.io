@@ -35,7 +35,7 @@ permalink: /about/
   </h2>
 
   <div class="mt-6 space-y-4 text-base leading-7 md:text-lg md:leading-8">
-  <div class="flex gap-5">
+  <div class="flex flex-wrap gap-5 md:flex-nowrap">
   <div class="min-w-[120px] mx-auto items-center flex-1">
   <div class="mx-auto size-[85px] text-cub-blue leading-none border-cub-blue bg-cub-gold border-2 flex items-center">
           <div class="flex flex-col items-center mx-auto">
