@@ -1,0 +1,40 @@
+---
+layout: default
+hideTitle: true
+---
+{%- assign ev_iso = page.event.start.dateTime | default: page.event.start.date -%}
+{%- assign end_iso = page.event.end.dateTime | default: page.event.end.date -%}
+{%- assign ev_day = ev_iso | date: "%Y-%m-%d" -%}
+{%- assign end_day = end_iso | date: "%Y-%m-%d" -%}
+{%- assign now_epoch = site.time | date: "%s" -%}
+{%- assign end_epoch = end_iso | date: "%s" -%}
+
+<div class="border-b border-gray-300 flex flex-col min-h-14 pb-4">
+  <h1 class="text-4xl font-extrabold text-cub-gold my-auto tracking-[0.2em] uppercase">{{ page.title }}</h1>
+
+  <h2 class="text-2xl font-bold text-cub-blue mt-4">
+    {{ ev_iso | date: "%a, %b %-d, %Y" }}
+    {%- if end_iso and end_day != ev_day -%}
+      - {{ end_iso | date: "%a, %b %-d, %Y" }}
+    {%- endif -%}
+
+    {%- if page.event.start.dateTime -%}
+      &nbsp;from {{ ev_iso | date: "%-I:%M %p" }}
+      {%- if page.event.end.dateTime and end_day == ev_day -%}
+        &nbsp;to {{ end_iso | date: "%-I:%M %p" }}
+      {%- endif -%}
+    {%- endif -%}
+  </h2>
+
+  <h3 class="text-xl font-semibold text-slate-700 mt-0">LOCATION AVAILABLE IN MEMBERS CALENDAR</h3>
+</div>
+
+<div class="prose mt-8">
+  {% if page.event.description %}
+    {{ page.event.description }}
+  {% endif %}
+</div>
+
+<div class="mt-8 flex gap-4">
+  <a href="/calendar/" class="inline-flex items-center rounded-lg px-4 py-2 bg-slate-100 text-slate-800 font-semibold hover:bg-slate-200 transition">&larr; Back to Calendar</a>
+</div>

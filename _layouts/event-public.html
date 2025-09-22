@@ -1,0 +1,74 @@
+---
+layout: default
+hideTitle: true
+---
+{%- assign ev_iso = page.event.start.dateTime | default: page.event.start.date -%}
+{%- assign end_iso = page.event.end.dateTime | default: page.event.end.date -%}
+{%- assign ev_day = ev_iso | date: "%Y-%m-%d" -%}
+{%- assign end_day = end_iso | date: "%Y-%m-%d" -%}
+{%- assign now_epoch = site.time | date: "%s" -%}
+{%- assign end_epoch = end_iso | date: "%s" -%}
+
+<div class="border-b border-gray-300 flex flex-col min-h-14 pb-4">
+  <h1 class="text-4xl font-extrabold text-cub-gold my-auto tracking-[0.2em] uppercase">{{ page.title }}</h1>
+
+  <h2 class="text-2xl font-bold text-cub-blue mt-4">
+    {{ ev_iso | date: "%a, %b %-d, %Y" }}
+    {%- if end_iso and end_day != ev_day -%}
+      - {{ end_iso | date: "%a, %b %-d, %Y" }}
+    {%- endif -%}
+
+    {%- if page.event.start.dateTime -%}
+      &nbsp;from {{ ev_iso | date: "%-I:%M %p" }}
+      {%- if page.event.end.dateTime and end_day == ev_day -%}
+        &nbsp;to {{ end_iso | date: "%-I:%M %p" }}
+      {%- endif -%}
+    {%- endif -%}
+  </h2>
+
+  <h3 class="text-xl font-semibold text-slate-700 mt-0">{{ page.event.location }}</h3>
+</div>
+
+<div class="prose mt-8">
+  {% if page.event.description %}
+    {{ page.event.description }}
+  {% endif %}
+</div>
+
+<div class="mt-8 flex gap-4">
+  <a href="/calendar/" class="inline-flex items-center rounded-lg px-4 py-2 bg-slate-100 text-slate-800 font-semibold hover:bg-slate-200 transition">&larr; Back to Calendar</a>
+
+  {% if end_epoch > now_epoch %}
+  {% if page.event.start.dateTime %}
+  {% assign start_time = page.event.start.dateTime | date: "%Y%m%dT%H%M%S" %}
+  {% assign end_time = page.event.end.dateTime | date: "%Y%m%dT%H%M%S" %}
+  {% assign location = page.event.location | url_encode %}
+  {% assign details = page.event.description | url_encode %}
+
+  <a href="https://www.google.com/calendar/render?action=TEMPLATE&text={{ page.title | url_encode }}&dates={{ start_time }}/{{ end_time }}&details={{ details }}&location={{ location }}&sf=true&output=xml" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-lg px-4 py-2 bg-cub-blue text-white font-semibold hover:bg-cub-blue/90 transition">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+    </svg>
+    Add to Google Calendar
+  </a>
+  {% endif %}
+
+  {% capture ics_raw %}{% include event-ics.ics ev=page.event %}{% endcapture %}
+  {% assign ics_encoded = ics_raw | uri_escape %}
+  <a download="{{ page.event.id }}.ics" href="data:text/calendar;charset=utf-8,{{ ics_encoded }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-lg px-4 py-2 bg-cub-blue text-white font-semibold hover:bg-cub-blue/90 transition">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+    </svg>
+    Download .ics
+  </a>
+  {% endif %}
+
+  {% if page.calendar_id %}
+  <a href="https://calendar.google.com/calendar/render?cid={{ page.calendar_id | url_encode }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-lg px-4 py-2 bg-yellow-400 text-cub-blue font-semibold hover:bg-yellow-300 transition">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+    </svg>
+    Subscribe to Pack 57 Calendar
+  </a>
+  {% endif %}
+</div>

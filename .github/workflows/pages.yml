@@ -1,0 +1,74 @@
+name: Build & Deploy Jekyll to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]     # or your default branch
+  workflow_dispatch:
+  schedule:
+    # Run every 15 minutes to keep Google Calendar events in sync
+    # This ensures newly added calendar events appear on the site without manual rebuilds
+    - cron: '*/15 * * * *'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false  # Don't cancel scheduled refreshes when multiple run close together
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # only this job can read secrets from the 'build' environment
+    environment: build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+    
+      # Figure out where Jekyll's "source" directory is (defaults to ".")
+      - name: Determine Jekyll source dir
+        id: jsrc
+        run: |
+          SRC=$(ruby -ryaml -e 'c=YAML.load_file("_config.yml"); puts(c["source"] || ".")')
+          echo "JEKYLL_SRC=$SRC" >> "$GITHUB_ENV"
+
+      # Write the calendar key into the Jekyll source directory
+      - name: Write gcalendar-key.json
+        shell: bash
+        run: |
+          mkdir -p "$JEKYLL_SRC"
+          # preserve newlines/quotes exactly
+          cat > "$JEKYLL_SRC/gcalendar-key.json" <<'JSON'
+          ${{ secrets.GCALENDAR_KEY_JSON }}
+          JSON
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+          ruby-version: '3.4.5'    # pick a version compatible with your gems
+
+      - name: Install dependencies
+        run: bundle install --without development
+
+      - name: Build site
+        run: bundle exec jekyll build --trace
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: github-pages
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

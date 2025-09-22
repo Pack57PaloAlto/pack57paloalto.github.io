@@ -1,0 +1,42 @@
+{%- assign ev = page.event -%}
+{%- assign is_all_day = ev.start.date | default: "" | size | plus: 0 -%}
+{%- assign uid = ev.iCalUID | default: ev.id -%}
+{%- assign dtstamp = site.time | date: "%Y%m%dT%H%M%SZ" -%}
+{%- assign summary_txt = ev.summary | default: "" | strip -%}
+{%- assign summary_esc = summary_txt | replace: '\', '\\\\' | replace: ',', '\,' | replace: ';', '\;' -%}
+{%- assign location_txt = ev.location | default: "" | strip -%}
+{%- assign location_esc = location_txt | replace: '\', '\\\\' | replace: ',', '\,' | replace: ';', '\;' -%}
+{%- assign description_html = ev.description | default: "" -%}
+{%- assign description_txt = description_html | strip_html | replace: '&nbsp;', ' ' | replace: '&amp;', '&' | replace: '&lt;', '<' | replace: '&gt;', '>' | replace: '&#39;', "'" | replace: '&quot;', '"' -%}
+{%- assign description_esc = description_txt | replace: '\', '\\\\' | replace: ',', '\,' | replace: ';', '\;' | replace: '
+', '\n' | strip -%}
+{%- if is_all_day > 0 -%}
+  {%- assign dtstart_val = ev.start.date     | date: "%Y%m%d" -%}
+  {%- assign dtend_val   = ev.end.date       | date: "%Y%m%d" -%}
+{%- else -%}
+  {%- assign dtstart_val = ev.start.dateTime | date: "%Y%m%dT%H%M%SZ" -%}
+  {%- assign dtend_val   = ev.end.dateTime   | date: "%Y%m%dT%H%M%SZ" -%}
+{%- endif -%}
+{%- capture ics -%}
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Your Site//Events//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:{{ uid }}
+DTSTAMP:{{ dtstamp }}
+SUMMARY:{{ summary_esc }}
+{% if location_esc != "" %}LOCATION:{{ location_esc }}{% endif %}
+{% if is_all_day > 0 -%}
+DTSTART;VALUE=DATE:{{ dtstart_val }}
+DTEND;VALUE=DATE:{{ dtend_val }}
+{% else -%}
+DTSTART:{{ dtstart_val }}
+DTEND:{{ dtend_val }}
+{% endif -%}
+DESCRIPTION:{{ description_esc }}
+END:VEVENT
+END:VCALENDAR
+{%- endcapture %}
+{{ ics | strip | replace: "\n", "\r\n" }}
