@@ -44,7 +44,7 @@
           </svg>
         </div>
         <!-- Text stack -->
-        <div class="size-[85px] text-cub-blue leading-none border-cub-blue bg-cub-gold border-2 flex items-center">
+        <div class="size-[85px] hidden text-cub-blue leading-none border-cub-blue bg-cub-gold border-2 md:flex items-center">
           <div class="flex flex-col items-center mx-auto">
             <div class="font-extrabold w-full text-[0.6rem] flex justify-between uppercase">
               <span class="tracking-[-0.1em] -ml-[0.6px]">P</span>
@@ -63,8 +63,9 @@
           </div>
         </div>
       </a>
-<div class="ml-10 text-[1.5rem] sm:text-[1.5rem] lg:text-[2rem] xl:text-[2.2rem] font-medium tracking-widest text-center whitespace-nowrap">
-  Palo Alto<span class="hidden xl:inline">, CA</span>
+<div class="ml-10 text-[1.2rem] sm:text-[1.5rem] lg:text-[2rem] xl:text-[2.2rem] font-medium tracking-widest text-center whitespace-nowrap">
+  <div class="flex flex-col md:hidden"><p>Pack 57</p><p>Palo Alto</p></div>
+  <div class="hidden md:flex">Palo Alto<span class="hidden xl:inline">, CA</span></div>
 </div>
 
       <!-- Desktop nav -->
@@ -77,12 +78,25 @@
           href="{{ '/join/' | relative_url }}">Join</a>
       </nav>
 
-      <!-- Mobile menu button (optional stub) -->
-      <button class="inline-flex items-center justify-center px-3 py-2 text-sm border rounded-lg md:hidden border-slate-300"
-              aria-label="Open menu">
-      ☰
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-button" class="inline-flex items-center justify-center p-3 text-white rounded-lg md:hidden hover:bg-blue-900 focus:outline-none"
+              aria-label="Open menu" aria-expanded="false">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
       </button>
   </div>
+  </div>
+
+  <!-- Mobile menu (hidden by default) -->
+  <div id="mobile-menu" class="hidden w-full px-4 pb-4 md:hidden">
+    <nav class="flex flex-col mt-2 space-y-2">
+      <a class="px-4 py-2 font-medium text-white rounded hover:bg-blue-900 hover:text-cub-gold" href="{{ '/' | relative_url }}">Home</a>
+      <a class="px-4 py-2 font-medium text-white rounded hover:bg-blue-900 hover:text-cub-gold" href="{{ '/calendar/' | relative_url }}">Calendar</a>
+      <a class="px-4 py-2 font-medium text-white rounded hover:bg-blue-900 hover:text-cub-gold" href="{{ '/about/' | relative_url }}">About</a>
+      <a class="px-4 py-2 font-medium text-white rounded hover:bg-blue-900 hover:text-cub-gold" href="https://delightful-cashew-9c2.notion.site/Palo-Alto-Pack-57-270c055aa265807590a6d168c765ce81">Parents</a>
+      <a class="px-4 py-2 font-bold text-center border-2 text-cub-gold border-cub-gold rounded-xl hover:bg-blue-900" href="{{ '/join/' | relative_url }}">Join</a>
+    </nav>
   </div>
   </header>
 
@@ -133,5 +147,34 @@
       <p>Some phrases and logos used on this site are <a class="underline hover:text-cub-gold" href="https://licensingbsa.org/trademarks">trademarks of Scouting America</a></p>
     </div>
   </footer>
+  <!-- Mobile menu JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      // Simple toggle function for mobile menu
+      function toggleMenu() {
+        const isOpen = mobileMenu.classList.toggle('hidden');
+        mobileMenuButton.setAttribute('aria-expanded', !isOpen);
+      }
+
+      // Toggle on button click
+      mobileMenuButton.addEventListener('click', function(event) {
+        event.stopPropagation();
+        toggleMenu();
+      });
+
+      // Close when clicking elsewhere on the page
+      document.addEventListener('click', function(event) {
+        if (!mobileMenu.classList.contains('hidden') &&
+            !mobileMenu.contains(event.target) &&
+            !mobileMenuButton.contains(event.target)) {
+          mobileMenu.classList.add('hidden');
+          mobileMenuButton.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
