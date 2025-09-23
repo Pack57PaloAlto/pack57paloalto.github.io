@@ -41,11 +41,31 @@ gcalendar:
       layout: event-public
       date_format: "%Y-%m-%d"
       look_ahead: 365
+    # lion den
     - id: c_87e6640306451b91fd0e46b0611cc26768b64a586815bba5b5d956c60bbd544b@group.calendar.google.com
       directory: events
       layout: event-private
       date_format: "%Y-%m-%d"
       look_ahead: 365
+    # tiger den
+    - id: c_14f61c66ad0267f311c1ade24dd6d365960f801dd6b9bf55943bade450015fed@group.calendar.google.com
+      directory: events
+      layout: event-private
+      date_format: "%Y-%m-%d"
+      look_ahead: 365
+    # bear den
+    - id: c_14dddfe86bf386af69d9cf03b888462ed7afd7be37ae0620a76b44171e7e091b@group.calendar.google.com
+      directory: events
+      layout: event-private
+      date_format: "%Y-%m-%d"
+      look_ahead: 365
+    # wolf den
+    - id: c_23bf39238bebf6e1676802f8aed5c2f2e31fb28ec8c9428d08f2a3cf653fba91@group.calendar.google.com
+      directory: events
+      layout: event-private
+      date_format: "%Y-%m-%d"
+      look_ahead: 365
+
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

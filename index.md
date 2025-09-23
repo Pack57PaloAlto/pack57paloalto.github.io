@@ -309,10 +309,10 @@ navbarText: Palo Alto, CA
             </div>
           </div>
                     <div class="flex items-center gap-4 p-4 rounded-xl ring-1 ring-slate-200">
-            <img src="/assets/images/blankleader.png" alt="Cubmaster portrait" class="object-cover w-16 h-16 rounded-full ring-yellow-700 ring-2">
+            <img src="/assets/images/denchief.png" alt="Cubmaster portrait" class="object-cover w-16 h-16 rounded-full ring-yellow-700 ring-2">
             <div>
-              <p class="font-semibold">TBD</p>
-              <p class="text-sm text-slate-600">Den Chief, Troop TBD</p>
+              <p class="font-semibold">Zachary A.</p>
+              <p class="text-sm text-slate-600">Den Chief</p>
             </div>
           </div>
           <div class="flex items-center gap-4 p-4 rounded-xl ring-1 ring-slate-200">
