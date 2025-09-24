@@ -1,7 +1,15 @@
+GIT
+  remote: https://github.com/hmk/jekyll-google-calendar
+  revision: e186f43c7a527e1fa1e38237af17b1d11ef08151
+  ref: e186f43
+  specs:
+    jekyll-google-calendar (0.3.2)
+      google-api-client (~> 0.9)
+
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (8.0.2.1)
+    activesupport (7.2.2.2)
       base64
       benchmark (>= 0.3)
       bigdecimal
@@ -13,7 +21,6 @@ GEM
       minitest (>= 5.1)
       securerandom (>= 0.3)
       tzinfo (~> 2.0, >= 2.0.5)
-      uri (>= 0.13.1)
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
     base64 (0.3.0)
@@ -101,8 +108,6 @@ GEM
       webrick (>= 1.0)
     jekyll-feed (0.17.0)
       jekyll (>= 3.7, < 5.0)
-    jekyll-google-calendar (0.3.1)
-      google-api-client (~> 0.9)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
     jekyll-seo-tag (2.8.0)
@@ -195,7 +200,7 @@ DEPENDENCIES
   http_parser.rb (~> 0.6.0)
   jekyll (~> 3.10.0)
   jekyll-feed (~> 0.6)
-  jekyll-google-calendar (~> 0.3.1)
+  jekyll-google-calendar!
   jekyll-tailwindcss (~> 0.7.0)
   kramdown-parser-gfm
   logger (~> 1.7)
