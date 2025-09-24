@@ -1,0 +1,13 @@
+{% comment %}
+Leader card partial - a reusable component for displaying a single leader
+Parameters:
+- leader: Leader object from site.data.leaders
+{% endcomment %}
+
+<div class="flex items-center gap-4 p-4 rounded-xl ring-1 ring-slate-200">
+  <img src="{{ include.leader.image }}" alt="{{ include.leader.role }} portrait" class="object-cover w-16 h-16 rounded-full ring-{{ include.leader.ring_color }} ring-2">
+  <div>
+    <p class="font-semibold">{{ include.leader.name }}</p>
+    <p class="text-sm text-slate-600">{{ include.leader.role }}</p>
+  </div>
+</div>

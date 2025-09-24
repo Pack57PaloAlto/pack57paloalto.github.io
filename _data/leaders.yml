@@ -1,0 +1,67 @@
+# Pack 57 Leaders
+# This data file contains information about all pack leaders
+# Format:
+#   - name: Leader's name (use first name and last initial, or just "TBD" for vacant positions)
+#     role: Leadership role
+#     image: Path to profile image
+#     ring_color: Tailwind color for the ring around the image
+
+- name: TBD
+  role: Cubmaster
+  image: /assets/images/blankleader.png
+  ring_color: cub-blue
+
+- name: TBD
+  role: Assistant Cubmaster
+  image: /assets/images/blankleader.png
+  ring_color: cub-blue
+
+- name: Jake H.
+  role: Den Leader (Lions)
+  image: /assets/images/jakeh.png
+  ring_color: yellow-400
+
+- name: Camilla A.
+  role: Den Leader (Tigers)
+  image: /assets/images/tigerleader.png
+  ring_color: amber-600
+
+- name: Erin H.
+  role: Den Leader (Wolves)
+  image: /assets/images/wolfleader.png
+  ring_color: slate-400
+
+- name: Pat S.
+  role: Den Leader (Bears and Webelos)
+  image: /assets/images/bearleader.png
+  ring_color: stone-800
+
+- name: Rich P.
+  role: Den Leader (Arrow of Light)
+  image: /assets/images/richp.png
+  ring_color: red-700
+
+- name: Jyothi M.
+  role: Committee Chair
+  image: /assets/images/jyothim.png
+  ring_color: slate-500
+
+- name: Lindy W.
+  role: Recruitment Chair
+  image: /assets/images/lindyw.png
+  ring_color: slate-500
+
+- name: David T.
+  role: Treasurer / Chartered Organization Representative
+  image: /assets/images/davidt.png
+  ring_color: slate-500
+
+- name: Zachary A.
+  role: Den Chief
+  image: /assets/images/denchief.png
+  ring_color: yellow-700
+
+- name: You?
+  role: ""
+  image: /assets/images/blankleader.png
+  ring_color: yellow-700
