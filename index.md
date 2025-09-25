@@ -234,23 +234,23 @@ navbarText: Palo Alto, CA
       <div class="grid gap-4 mt-6">
         <div class="p-4 rounded-xl ring-1 ring-slate-200">
           <p class="font-semibold">Lions (K)</p>
-          <p class="text-sm text-slate-600">Thursdays • 6–7pm</p>
+          <p class="text-sm text-slate-600">Thursdays</p>
         </div>
         <div class="p-4 rounded-xl ring-1 ring-slate-200">
           <p class="font-semibold">Tigers (1)</p>
-          <p class="text-sm text-slate-600">Thursdays • 6–7pm</p>
+          <p class="text-sm text-slate-600">Thursdays</p>
         </div>
         <div class="p-4 rounded-xl ring-1 ring-slate-200">
           <p class="font-semibold">Wolves (2)</p>
-          <p class="text-sm text-slate-600">Thursdays • 6–7pm</p>
+          <p class="text-sm text-slate-600">Thursdays</p>
         </div>
         <div class="p-4 rounded-xl ring-1 ring-slate-200">
-          <p class="font-semibold">Bears and Webelos (3-4)</p>
-          <p class="text-sm text-slate-600">Thursdays • 6–7pm</p>
+          <p class="font-semibold">Bears (3)</p>
+          <p class="text-sm text-slate-600">Thursdays</p>
         </div>
         <div class="p-4 rounded-xl ring-1 ring-slate-200">
-          <p class="font-semibold">Arrows of Light (5)</p>
-          <p class="text-sm text-slate-600">Thursdays • 6–7:30pm</p>
+          <p class="font-semibold">Webelos & Arrows of Light (4-5)</p>
+          <p class="text-sm text-slate-600">Thursdays</p>
         </div>
       </div>
       <div class="mt-6">
