@@ -6,18 +6,13 @@
 #     image: Path to profile image
 #     ring_color: Tailwind color for the ring around the image
 
-- name: TBD
-  role: Cubmaster
-  image: /assets/images/blankleader.png
-  ring_color: cub-blue
-
-- name: TBD
-  role: Assistant Cubmaster
-  image: /assets/images/blankleader.png
-  ring_color: cub-blue
+- name: Rich P.
+  role: Cubmaster, Den Leader (AOL)
+  image: /assets/images/richp.png
+  ring_color: red-700
 
 - name: Jake H.
-  role: Den Leader (Lions)
+  role: Assistant Cubmaster, Den Leader (Lions)
   image: /assets/images/jakeh.png
   ring_color: yellow-400
 
@@ -35,11 +30,6 @@
   role: Den Leader (Bears and Webelos)
   image: /assets/images/bearleader.png
   ring_color: stone-800
-
-- name: Rich P.
-  role: Den Leader (Arrow of Light)
-  image: /assets/images/richp.png
-  ring_color: red-700
 
 - name: Jyothi M.
   role: Committee Chair
