@@ -56,6 +56,11 @@ jobs:
       - name: Build site
         run: bundle exec jekyll build --trace
 
+      - name: Install ImageMagick
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick
+
       - name: Optimize built images
         run: bash script/optimize-images.sh _site/assets/images
 
