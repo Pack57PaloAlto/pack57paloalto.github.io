@@ -25,7 +25,7 @@ permalink: /about/
 
     <div>
         <img src="/assets/images/scout-me-in.jpg" alt="Pack 57 Scouts hiking together"
-            class="object-cover w-full h-80 rounded-xl">
+            class="object-cover w-full h-80 rounded-xl" loading="lazy" decoding="async">
     </div>
 </div>
 
