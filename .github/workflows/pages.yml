@@ -56,6 +56,9 @@ jobs:
       - name: Build site
         run: bundle exec jekyll build --trace
 
+      - name: Optimize built images
+        run: bash script/optimize-images.sh _site/assets/images
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 

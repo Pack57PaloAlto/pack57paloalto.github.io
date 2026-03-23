@@ -63,6 +63,23 @@ This will generate the static site in the `_site` directory.
 
 The site is automatically deployed to GitHub Pages when changes are pushed to the main branch using GitHub Actions.
 
+## Image Optimization
+
+Built images are optimized during the GitHub Pages workflow by `script/optimize-images.sh`. This keeps the original source photos in the repository while shrinking the files that are actually deployed.
+
+The current rules are intentionally simple:
+
+- large hero and content JPEGs are resized to a practical maximum width and recompressed
+- leader profile PNGs are resized aggressively because they are only displayed as small avatars
+- metadata is stripped from generated assets
+
+If you want to preview the optimized output locally after a build, run:
+
+```bash
+bundle exec jekyll build
+script/optimize-images.sh _site/assets/images
+```
+
 ## Directory Structure
 
 - `_config.yml`: Main Jekyll configuration
