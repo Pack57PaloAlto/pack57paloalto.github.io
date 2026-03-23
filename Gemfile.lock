@@ -1,11 +1,3 @@
-GIT
-  remote: https://github.com/hmk/jekyll-google-calendar
-  revision: e186f43c7a527e1fa1e38237af17b1d11ef08151
-  ref: e186f43
-  specs:
-    jekyll-google-calendar (0.3.2)
-      google-api-client (~> 0.9)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -255,7 +247,7 @@ DEPENDENCIES
   http_parser.rb (~> 0.6.0)
   jekyll (~> 4.0)
   jekyll-feed (~> 0.6)
-  jekyll-google-calendar!
+  jekyll-google-calendar
   jekyll-tailwindcss (~> 0.7.0)
   kramdown-parser-gfm
   logger (~> 1.7)
