@@ -10,7 +10,7 @@ navbarText: Palo Alto, CA
 <section class="relative">
   <div class="absolute inset-0">
     <!-- Replace with your hero image -->
-    <img src="/assets/images/hiking-together.jpg" alt="Cub Scouts hiking together" class="object-cover w-full h-full" />
+    <img src="/assets/images/hiking-together.jpg" alt="Cub Scouts hiking together" class="object-cover w-full h-full" fetchpriority="high" decoding="async" />
     <div class="absolute inset-0 bg-black/45"></div>
   </div>
   <div class="relative max-w-6xl px-4 py-24 mx-auto text-center text-white sm:py-32">
@@ -171,10 +171,10 @@ navbarText: Palo Alto, CA
     </div>
     <div class="grid grid-cols-2 gap-4">
       <!-- Swap in your own images -->
-      <img src="/assets/images/crafting.jpg" alt="Parent and child working on a craft" class="object-cover w-full h-48 rounded-xl">
-      <img src="/assets/images/cleanup.jpg" alt="Pack at community clean-up" class="object-cover w-full h-48 rounded-xl">
-      <img src="/assets/images/smores.jpg" alt="Close up of Smores" class="object-cover w-full h-48 rounded-xl">
-      <img src="/assets/images/goo.jpg" alt="Two scouts inspecting yellow science goo" class="object-cover w-full h-48 rounded-xl">
+      <img src="/assets/images/crafting.jpg" alt="Parent and child working on a craft" class="object-cover w-full h-48 rounded-xl" loading="lazy" decoding="async">
+      <img src="/assets/images/cleanup.jpg" alt="Pack at community clean-up" class="object-cover w-full h-48 rounded-xl" loading="lazy" decoding="async">
+      <img src="/assets/images/smores.jpg" alt="Close up of Smores" class="object-cover w-full h-48 rounded-xl" loading="lazy" decoding="async">
+      <img src="/assets/images/goo.jpg" alt="Two scouts inspecting yellow science goo" class="object-cover w-full h-48 rounded-xl" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
@@ -189,28 +189,28 @@ navbarText: Palo Alto, CA
     <div class="grid gap-6 mt-10 sm:grid-cols-2 lg:grid-cols-4">
       <!-- Card -->
       <article class="overflow-hidden bg-white shadow-sm rounded-2xl ring-1 ring-slate-200">
-        <img src="/assets/images/hiking-with-adults.jpg" alt="A group of adults hiking outdoors" class="object-cover w-full h-40">
+        <img src="/assets/images/hiking-with-adults.jpg" alt="A group of adults hiking outdoors" class="object-cover w-full h-40" loading="lazy" decoding="async">
         <div class="p-4">
           <h3 class="font-bold">Outdoor Skills</h3>
           <p class="mt-1 text-sm text-slate-600">Hikes, campouts, nature study, and leave-no-trace basics.</p>
         </div>
       </article>
       <article class="overflow-hidden bg-white shadow-sm rounded-2xl ring-1 ring-slate-200">
-        <img src="/assets/images/pinewood.jpg" alt="STEM project" class="object-cover w-full h-40">
+        <img src="/assets/images/pinewood.jpg" alt="STEM project" class="object-cover w-full h-40" loading="lazy" decoding="async">
         <div class="p-4">
           <h3 class="font-bold">STEM & Creativity</h3>
           <p class="mt-1 text-sm text-slate-600">From Pinewood Derby cars to hands-on projects, Scouts design, build, and discover new skills.</p>
         </div>
       </article>
       <article class="overflow-hidden bg-white shadow-sm rounded-2xl ring-1 ring-slate-200">
-        <img src="/assets/images/food-drive.jpg" alt="Community service" class="object-cover w-full h-40">
+        <img src="/assets/images/food-drive.jpg" alt="Community service" class="object-cover w-full h-40" loading="lazy" decoding="async">
         <div class="p-4">
           <h3 class="font-bold">Community Service</h3>
           <p class="mt-1 text-sm text-slate-600">Pack service days and projects that make a difference.</p>
         </div>
       </article>
       <article class="overflow-hidden bg-white shadow-sm rounded-2xl ring-1 ring-slate-200">
-        <img src="/assets/images/ball-game.jpg" alt="Games and fun" class="object-cover w-full h-40">
+        <img src="/assets/images/ball-game.jpg" alt="Games and fun" class="object-cover w-full h-40" loading="lazy" decoding="async">
         <div class="p-4">
           <h3 class="font-bold">Fun & Friendship</h3>
           <p class="mt-1 text-sm text-slate-600">Games, campfires, and celebrations that build our community.</p>
