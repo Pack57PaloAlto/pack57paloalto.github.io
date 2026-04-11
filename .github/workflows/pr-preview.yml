@@ -1,0 +1,117 @@
+name: PR Preview
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  pull_request_target:
+    types: [closed]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: pr-preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  build-preview:
+    if: github.event.action != 'closed'
+    runs-on: ubuntu-latest
+    environment: build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Determine Jekyll source dir
+        id: jsrc
+        run: |
+          SRC=$(ruby -ryaml -e 'c=YAML.load_file("_config.yml"); puts(c["source"] || ".")')
+          echo "JEKYLL_SRC=$SRC" >> "$GITHUB_ENV"
+
+      - name: Write gcalendar-key.json
+        shell: bash
+        run: |
+          mkdir -p "$JEKYLL_SRC"
+          cat > "$JEKYLL_SRC/gcalendar-key.json" <<'JSON'
+          ${{ secrets.GCALENDAR_KEY_JSON }}
+          JSON
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+          ruby-version: '3.4.5'
+
+      - name: Install dependencies
+        run: bundle install --without development
+
+      - name: Build site
+        run: bundle exec jekyll build --trace
+
+      - name: Install ImageMagick
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick
+
+      - name: Optimize built images
+        run: bash script/optimize-images.sh _site/assets/images
+
+      - name: Upload preview artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr-preview-site-${{ github.event.pull_request.number }}
+          path: _site
+          retention-days: 7
+
+      - name: Comment with preview artifact link
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request.number;
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const body = [
+              '🧪 PR preview build is ready.',
+              '',
+              `Download the built site artifact from the workflow run: ${runUrl}`,
+              '',
+              'Open the `pr-preview-site-' + pr + '` artifact and inspect the generated `_site` output locally.'
+            ].join('\n');
+
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pr,
+            });
+            const existing = comments.find(c => c.user.type === 'Bot' && c.body.includes('🧪 PR preview build is ready.'));
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pr,
+                body,
+              });
+            }
+
+  cleanup-comment:
+    if: github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comment on PR close
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request.number;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pr,
+              body: '🧹 PR closed. Preview artifacts for this PR will expire automatically.'
+            });
