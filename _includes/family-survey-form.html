@@ -298,65 +298,42 @@
         </div>
     </div>
 
-    <!-- Section: Volunteer Roles (tiered from YAML) -->
+    <!-- Section: Volunteer Interest Areas -->
     <div class="overflow-hidden bg-white rounded-lg shadow-md">
         <div class="px-6 py-3 bg-cub-blue">
-            <h2 class="m-0 text-lg font-bold text-white">Volunteer Roles — 2026-2027</h2>
+            <h2 class="m-0 text-lg font-bold text-white">Volunteer Interests — 2026-2027</h2>
         </div>
         <div class="px-6 py-6">
             <p class="mb-2 text-sm text-gray-600">
                 Scouting is an all-volunteer organization. We rely on every family to pitch in so our Cubs have an amazing experience.
-                There's something for everyone — from one-morning helpers to season-long leaders.
+                There's something for everyone — from storing a piece of gear to leading a den of excited scouts.
             </p>
             <p class="mb-6 text-sm text-gray-600">
-                <strong>Check any roles you're interested in.</strong> Don't worry — checking a box isn't a commitment, it just helps us plan.
+                <strong>Check any categories that interest you.</strong> We'll follow up to chat about specific roles — no commitment yet!
             </p>
 
-            {% for tier in site.data.volunteer-roles %}
-            {% comment %}
-                Default open/closed state based on form type:
-                - Returning: leadership tiers (Key 3, Den, Pack) open; day-of/storage closed
-                - Incoming: day-of/storage open; leadership tiers closed
-            {% endcomment %}
-            {% if page.form_type == "returning" %}
-                {% if tier.tier == "Key 3" or tier.tier == "Den Leadership" or tier.tier == "Pack Leadership" %}
-                    {% assign tier_open = true %}
-                {% else %}
-                    {% assign tier_open = false %}
-                {% endif %}
-            {% else %}
-                {% if tier.tier == "Day-of Volunteers" or tier.tier == "Storage Volunteers" %}
-                    {% assign tier_open = true %}
-                {% else %}
-                    {% assign tier_open = false %}
-                {% endif %}
-            {% endif %}
-
-            <details class="mb-4 border border-gray-200 rounded-lg" {% if tier_open %}open{% endif %}>
-                <summary class="flex items-center gap-2 px-4 py-3 font-medium cursor-pointer select-none text-cub-blue hover:bg-gray-50">
-                    <span>{{ tier.emoji }} {{ tier.tier }}</span>
-                    <span class="ml-auto text-xs font-normal text-gray-400">{{ tier.commitment_summary }}</span>
-                </summary>
-                <div class="px-4 pb-4">
-                    <div class="grid gap-2 mt-2">
-                        {% for role in tier.roles %}
-                        <label class="flex items-start gap-2 p-2 text-sm text-gray-700 rounded hover:bg-gray-50">
-                            <input type="checkbox" name="roles[]" value="{{ role.name }}" class="mt-0.5 rounded text-cub-blue focus:ring-cub-blue">
-                            <span>
-                                <strong>{{ role.name }}</strong>
-                                <span class="text-xs text-gray-400">({{ role.commitment }})</span>
-                                <br>
-                                <span class="text-xs text-gray-500">{{ role.description }}</span>
-                            </span>
-                        </label>
-                        {% endfor %}
-                    </div>
-                </div>
-            </details>
-            {% endfor %}
+            <div class="space-y-3">
+                {% for tier in site.data.volunteer-roles %}
+                <label class="flex items-start gap-3 p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50">
+                    <input type="checkbox" name="role_interests[]" value="{{ tier.tier }}" class="mt-0.5 rounded text-cub-blue focus:ring-cub-blue">
+                    <span>
+                        <span class="font-medium text-gray-800">{{ tier.emoji }} {{ tier.tier }}</span>
+                        <span class="text-xs text-gray-400"> — {{ tier.commitment_summary }}</span>
+                        <br>
+                        <span class="text-xs text-gray-500">
+                            {% assign role_names = "" %}
+                            {% for role in tier.roles limit:4 %}
+                                {% if forloop.first == false %}, {% endif %}{{ role.name }}
+                            {% endfor %}
+                            {% if tier.roles.size > 4 %}, and {{ tier.roles.size | minus: 4 }} more{% endif %}
+                        </span>
+                    </span>
+                </label>
+                {% endfor %}
+            </div>
 
             <div class="mt-4">
-                <label for="roles_other" class="block text-sm font-medium text-gray-700">Other ways you'd like to help:</label>
+                <label for="roles_other" class="block text-sm font-medium text-gray-700">Anything else about volunteering:</label>
                 <input type="text" name="roles_other" id="roles_other"
                        class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-cub-blue focus:ring-cub-blue"
                        placeholder="e.g., I'd like to help but not sure where I fit best...">
