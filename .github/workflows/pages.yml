@@ -1,8 +1,9 @@
-name: Build & Deploy Jekyll to GitHub Pages
+name: Build & Deploy Jekyll to Cloudflare Pages
 
 on:
   push:
-    branches: ["main"]     # or your default branch
+    branches: ["main"]
+  pull_request:
   workflow_dispatch:
   schedule:
     # Run every 15 minutes to keep Google Calendar events in sync
@@ -11,22 +12,19 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: "pages"
-  cancel-in-progress: false  # Don't cancel scheduled refreshes when multiple run close together
+  group: "pages-${{ github.event.pull_request.number || github.ref }}"
+  cancel-in-progress: true
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    # only this job can read secrets from the 'build' environment
     environment: build
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-    
+
       # Figure out where Jekyll's "source" directory is (defaults to ".")
       - name: Determine Jekyll source dir
         id: jsrc
@@ -48,7 +46,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-          ruby-version: '3.4.5'    # pick a version compatible with your gems
+          ruby-version: '3.4.5'
 
       - name: Install dependencies
         run: bundle install --without development
@@ -64,19 +62,9 @@ jobs:
       - name: Optimize built images
         run: bash script/optimize-images.sh _site/assets/images
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
         with:
-          path: _site
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment: github-pages
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy _site --project-name=pack57paloalto
