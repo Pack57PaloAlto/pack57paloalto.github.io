@@ -53,7 +53,7 @@ subtitle: Begin Your Scouting Adventure
                         </div>
                         <div>
                             <p class="text-gray-600">
-                                Fill out the <a class="text-blue-600 hover:underline" href="https://docs.google.com/forms/d/e/1FAIpQLScIuZbCz-744T95AzGs10x8-v5PW-xrizV1YpOftV2eyhzSXg/viewform">Incoming Family Survey</a>. If you have any questions, please contact our leadership team through our <a href="/contact" class="text-blue-600 hover:underline">Contact page</a>.
+                                Fill out the <a class="text-blue-600 hover:underline" href="/family-survey/">Incoming Family Survey</a>. If you have any questions, please contact our leadership team through our <a href="/contact" class="text-blue-600 hover:underline">Contact page</a>.
                             </p>
                         </div>
                     </div>

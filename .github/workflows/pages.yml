@@ -12,6 +12,7 @@ on:
 
 permissions:
   contents: read
+  pull-requests: write
 
 concurrency:
   group: "pages-${{ github.event.pull_request.number || github.ref }}"
@@ -63,8 +64,19 @@ jobs:
         run: bash script/optimize-images.sh _site/assets/images
 
       - name: Deploy to Cloudflare Pages
+        id: deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy _site --project-name=pack57paloalto
+
+      - name: Comment preview URL on PR
+        if: github.event_name == 'pull_request'
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: cloudflare-preview
+          message: |
+            🚀 **Preview deployed!**
+
+            ${{ steps.deploy.outputs.deployment-url }}
