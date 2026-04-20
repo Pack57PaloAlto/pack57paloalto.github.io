@@ -141,7 +141,7 @@ navbarText: Palo Alto, CA
     {%- endif -%}
 
     <div class="mt-8 text-center">
-      <a href="/events/" class="inline-flex items-center px-5 py-3 font-semibold text-white transition rounded-lg bg-slate-900 hover:bg-slate-800">
+      <a href="/calendar/" class="inline-flex items-center px-5 py-3 font-semibold text-white transition rounded-lg bg-slate-900 hover:bg-slate-800">
         Full Calendar
       </a>
     </div>
