@@ -50,7 +50,7 @@ navbarText: Palo Alto, CA
     {%- endif -%}
   {%- endif -%}
 {%- endfor -%}
-{%- assign upcoming = upcoming | sort: 'event.start.dateTime' -%}
+{%- assign upcoming = upcoming | sort: 'event.sort_key' -%}
 
 <section class="pt-2 pb-8 bg-slate-50">
   <div class="max-w-6xl px-4 mx-auto">
