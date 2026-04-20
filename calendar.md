@@ -25,8 +25,8 @@ navbarText: Palo Alto, CA
   {% endif %}
 {% endfor %}
 
-{% assign upcoming = upcoming | sort: 'event.start.dateTime' %}
-{% assign past = past | sort: 'event.start.dateTime' | reverse %}
+{% assign upcoming = upcoming | sort: 'event.sort_key' %}
+{% assign past = past | sort: 'event.sort_key' | reverse %}
 
 <!-- Upcoming -->
 <section class="mx-auto max-w-6xl px-4 py-10">
