@@ -3,103 +3,60 @@ layout: default
 title: Pack 57 Calendar
 permalink: /calendar/
 navbarText: Palo Alto, CA
+hideTitle: true
 ---
 
-
-<!-- Collect events -->
-{% assign now_epoch = site.time | date: "%s" %}
-{% assign upcoming = '' | split: '' %}
-{% assign past = '' | split: '' %}
-
-{% for p in site.pages %}
-  {% if p.url and p.event and p.url contains '/events/' %}
-    {% assign start_iso = p.event.start.dateTime | default: p.event.start.date %}
-    {% if start_iso %}
-      {% assign start_epoch = start_iso | date: "%s" %}
-      {% if start_epoch >= now_epoch %}
-        {% assign upcoming = upcoming | push: p %}
-      {% else %}
-        {% assign past = past | push: p %}
-      {% endif %}
-    {% endif %}
-  {% endif %}
-{% endfor %}
-
-{% assign upcoming = upcoming | sort: 'event.sort_key' %}
-{% assign past = past | sort: 'event.sort_key' | reverse %}
-
-<!-- Upcoming -->
 <section class="mx-auto max-w-6xl px-4 py-10">
-<h2 class="text-2xl md:text-3xl font-extrabold tracking-wide uppercase text-cub-blue">Upcoming Events</h2>
-{% if upcoming.size == 0 %}
-    <p class="mt-4 text-slate-600">No upcoming events found.</p>
-{% else %}
-    <div class="mt-6 divide-y divide-slate-200 rounded-2xl ring-1 ring-slate-200 bg-white">
-  {% for p in upcoming %}
-    {% assign ev = p.event %}
-    <article class="p-4 md:p-5 grid md:grid-cols-5 gap-3">
-      <p class="text-sm text-slate-500 md:col-span-1">
-        {{ ev.start.dateTime | default: ev.start.date | date: "%b %-d, %Y" }}
-      </p>
-      <div class="md:col-span-3">
-        <a href="{{ p.url | relative_url }}" class="font-semibold hover:underline">
-          {{ ev.summary | default: p.title }}
-        </a>
-        {% if ev.location %}
-          {% if p.layout contains "public" %}
-            <p class="text-sm text-slate-600 mt-0.5">{{ ev.location }}</p>
-          {% else %}
-            <p class="text-sm text-slate-600 mt-0.5">Location available in members calendar</p>
-          {% endif %}
-        {% endif %}
-      </div>
-      <div class="md:col-span-1 flex items-start md:justify-end">
-          <a href="{{ p.url }}" target="_blank" rel="noopener"
-             class="inline-flex items-center rounded-lg px-3 py-1.5 text-sm font-medium
-                    ring-1 ring-slate-300 hover:bg-slate-50">
-            View
-          </a>
-      </div>
-    </article>
-  {% endfor %}
-</div>
-{% endif %}
-</section>
-
-<!-- Past -->
-<section class="mx-auto max-w-6xl px-4 pb-16">
-<h2 class="text-2xl md:text-3xl font-extrabold tracking-wide uppercase text-slate-800">Past Events</h2>
-{% if past.size == 0 %}
-    <p class="mt-4 text-slate-600">No past events yet.</p>
-{% else %}
-    <div class="mt-6 divide-y divide-slate-200 rounded-2xl ring-1 ring-slate-200 bg-white">
-    {% for p in past %}
-        {% assign ev = p.event %}
-        <article class="p-4 md:p-5 grid md:grid-cols-5 gap-3">
-        <p class="text-sm text-slate-500 md:col-span-1">
-            {{ ev.start.dateTime | default: ev.start.date | date: "%b %-d, %Y" }}
-        </p>
-        <div class="md:col-span-3">
-            <a href="{{ p.url | relative_url }}" class="font-semibold hover:underline">
-            {{ ev.summary | default: p.title }}
-            </a>
-            {% if ev.location %}
-              {% if p.layout contains "public" %}
-                <p class="text-sm text-slate-600 mt-0.5">{{ ev.location }}</p>
-              {% else %}
-                <p class="text-sm text-slate-600 mt-0.5">Location available in members calendar</p>
-              {% endif %}
-            {% endif %}
-        </div>
-        <div class="md:col-span-1 flex items-start md:justify-end">
-          <a href="{{ p.url }}" target="_blank" rel="noopener"
-             class="inline-flex items-center rounded-lg px-3 py-1.5 text-sm font-medium
-                    ring-1 ring-slate-300 hover:bg-slate-50">
-            View
-          </a>
-        </div>
-        </article>
-    {% endfor %}
+  <div class="flex items-baseline justify-between flex-wrap gap-2">
+    <h2 class="text-2xl md:text-3xl font-extrabold tracking-wide uppercase text-cub-blue">Calendar</h2>
+    <div class="text-sm text-slate-600 flex items-center gap-4">
+      <span class="inline-flex items-center gap-1.5">
+        <span class="inline-block w-3 h-3 rounded-sm" style="background:#1e3a8a"></span>
+        Pack-wide
+      </span>
+      <span class="inline-flex items-center gap-1.5">
+        <span class="inline-block w-3 h-3 rounded-sm" style="background:#ca8a04"></span>
+        Den / Members
+      </span>
     </div>
-{% endif %}
+  </div>
+
+  {% include calendar-widget.html %}
+
+  <div class="mt-8">
+    <h3 class="text-lg font-bold tracking-wide uppercase text-slate-700">Subscribe in Google Calendar</h3>
+    <p class="mt-2 text-sm text-slate-600">Open any calendar in Google Calendar to subscribe and get updates on your phone.</p>
+
+    <p class="mt-4 text-xs font-semibold uppercase tracking-wide text-slate-500">Pack-wide</p>
+    <div class="mt-2 flex flex-wrap gap-2">
+      {% for cal in site.gcalendar.calendars %}
+        {% if cal.name and cal.layout == 'event-public' %}
+        <a href="https://calendar.google.com/calendar/render?cid={{ cal.id | url_encode }}"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center rounded-lg px-3 py-2 text-sm font-medium ring-1 ring-slate-300 bg-white hover:bg-slate-50">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          {{ cal.name }}
+        </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <p class="mt-5 text-xs font-semibold uppercase tracking-wide text-slate-500">Dens (members only)</p>
+    <div class="mt-2 flex flex-wrap gap-2">
+      {% for cal in site.gcalendar.calendars %}
+        {% if cal.name and cal.layout == 'event-private' %}
+        <a href="https://calendar.google.com/calendar/render?cid={{ cal.id | url_encode }}"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center rounded-lg px-3 py-2 text-sm font-medium ring-1 ring-slate-300 bg-white hover:bg-slate-50">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          {{ cal.name }}
+        </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
 </section>

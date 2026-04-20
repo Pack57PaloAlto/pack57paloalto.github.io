@@ -1,0 +1,35 @@
+---
+layout: null
+permalink: /events.json
+---
+[
+{%- assign events = '' | split: '' -%}
+{%- for p in site.pages -%}
+  {%- if p.url and p.url contains '/events/' and p.event -%}
+    {%- assign events = events | push: p -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- for p in events -%}
+{%- assign ev = p.event -%}
+{%- assign start_iso = ev.start.dateTime | default: ev.start.date -%}
+{%- assign end_iso = ev.end.dateTime | default: ev.end.date -%}
+{%- assign is_all_day = false -%}
+{%- if ev.start.date and ev.start.dateTime == nil -%}{%- assign is_all_day = true -%}{%- endif -%}
+{%- assign is_public = false -%}
+{%- if p.layout contains 'public' -%}{%- assign is_public = true -%}{%- endif -%}
+  {
+    "title": {{ ev.summary | default: p.title | jsonify }},
+    "start": {{ start_iso | jsonify }},
+    {%- if end_iso %}
+    "end": {{ end_iso | jsonify }},
+    {%- endif %}
+    "allDay": {{ is_all_day }},
+    "url": {{ p.url | relative_url | jsonify }},
+    "color": "{% if is_public %}#1e3a8a{% else %}#ca8a04{% endif %}",
+    "extendedProps": {
+      "audience": "{% if is_public %}Pack-wide{% else %}Members{% endif %}"
+      {%- if is_public and ev.location %}, "location": {{ ev.location | jsonify }}{%- endif %}
+    }
+  }{%- unless forloop.last -%},{%- endunless -%}
+{%- endfor -%}
+]
