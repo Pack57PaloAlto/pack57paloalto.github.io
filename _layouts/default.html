@@ -25,7 +25,7 @@
       <!-- Brand (paw + title) -->
       <a href="{{ '/' | relative_url }}" class="flex items-center gap-3">
         <!-- Logo icon -->
-      <div class="mx-auto fill-cub-blue">
+        <div class="mx-auto fill-cub-blue">
           <svg width="110" height="110" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_1_2)">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M4.41802 49.9938L50 4.41179L95.582 49.9938L50 95.5882L4.41802 49.9938Z" fill="#003F87"/>
@@ -43,15 +43,13 @@
             </g>
           </svg>
         </div>
-        <!-- Pack 57 circular emblem -->
+      </a>
+      <!-- Pack 57 circular emblem (center lockup — contains "Pack 57 Palo Alto" text) -->
+      <a href="{{ '/' | relative_url }}" class="ml-10 flex items-center">
         <img src="{{ '/assets/images/pack57-logo.png' | relative_url }}"
              alt="Pack 57 Palo Alto"
-             class="h-20 w-20 md:h-[85px] md:w-[85px] object-contain" />
+             class="h-24 w-24 object-contain" />
       </a>
-<div class="ml-10 text-[1.2rem] sm:text-[1.5rem] lg:text-[2rem] xl:text-[2.2rem] font-medium tracking-widest text-center whitespace-nowrap">
-  <div class="flex flex-col md:hidden"><p>Pack 57</p><p>Palo Alto</p></div>
-  <div class="hidden md:flex">Palo Alto<span class="hidden xl:inline">, CA</span></div>
-</div>
 
       <!-- Desktop nav -->
       <nav class="items-center hidden gap-6 md:flex">
