@@ -75,13 +75,19 @@ gcalendar:
 
 
 # Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# Jekyll's built-in defaults exclude Gemfile, Gemfile.lock, node_modules,
+# and vendor/. Anything listed here is added on top of those.
+exclude:
+  - gcalendar-key.json  # Google service account key — must NOT be published
+  - CLAUDE.md           # Claude Code project instructions
+  - README.md           # repo README
+  - LICENSE
+  - mise.toml
+  - script/             # build/deploy helper scripts
+  - docs/               # internal design specs and planning docs
+  - .claude/
+  - .github/
+  - .ruby-lsp/
+  - .ruby-version
+  - .sass-cache/
+  - .jekyll-cache/
