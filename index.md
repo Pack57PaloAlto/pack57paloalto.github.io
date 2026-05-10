@@ -31,6 +31,59 @@ navbarText: Palo Alto, CA
   </div>
 </section>
 
+<!-- PDF OVERVIEW PREVIEW -->
+<section class="px-4 py-16 sm:px-6 lg:px-8 bg-slate-50">
+  <div class="max-w-6xl mx-auto overflow-hidden rounded-3xl bg-cub-blue">
+    <div class="grid items-center gap-10 px-6 py-10 sm:px-10 sm:py-14 lg:grid-cols-[1.15fr_1fr] lg:gap-14 lg:px-14">
+
+      <div class="order-2 lg:order-1">
+        <a href="/assets/docs/pack57-2026-2027-overview.pdf"
+           target="_blank" rel="noopener"
+           class="block group py-6"
+           aria-label="Download Pack 57's 2026 to 2027 program overview as a PDF">
+          <div class="relative max-w-[88%] mx-auto">
+            <div class="absolute inset-x-0 top-0 overflow-hidden bg-white rounded-xl shadow-xl ring-1 ring-white/10 transform translate-x-6 translate-y-3 rotate-3 opacity-90">
+              <img src="/assets/images/pack57-overview-preview-2-top.png"
+                   alt="Top of page 2 of the program overview"
+                   class="w-full h-auto" />
+              <div class="px-4 py-2 text-[10px] tracking-[0.2em] uppercase text-cub-blue/60 border-t border-slate-200">
+                Page 2
+              </div>
+            </div>
+            <div class="relative overflow-hidden bg-white rounded-xl shadow-2xl ring-1 ring-white/10 transform -rotate-2 transition-transform group-hover:-translate-y-1">
+              <img src="/assets/images/pack57-overview-preview-1-top.png"
+                   alt="Top of page 1 of the program overview"
+                   class="w-full h-auto" />
+              <div class="px-4 py-2 text-[10px] tracking-[0.2em] uppercase text-cub-blue/70 border-t border-slate-200 flex items-center justify-between">
+                <span>Preview · click to read full overview</span>
+                <span aria-hidden="true">↓</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="order-1 lg:order-2">
+        <h2 class="mt-0 mb-0 text-4xl font-extrabold tracking-[0.08em] uppercase text-cub-gold sm:text-5xl">
+          2026 — 27, at a glance.
+        </h2>
+
+        <div class="mt-8">
+          <a href="/assets/docs/pack57-2026-2027-overview.pdf"
+             target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center gap-2 px-7 py-4 font-bold transition bg-cub-gold rounded-xl text-cub-blue hover:bg-yellow-300">
+            <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v8.586l2.293-2.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L9 12.586V4a1 1 0 011-1zM4 16a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1z" clip-rule="evenodd" />
+            </svg>
+            Download the overview
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- EVENTS / CALENDAR PREVIEW -->
 {%- assign now_epoch = site.time | date: "%s" -%}
 {%- assign shown = 0 -%}
@@ -254,47 +307,19 @@ navbarText: Palo Alto, CA
         </div>
       </div>
       <div class="mt-6">
-        <a href="/contact" class="inline-flex items-center px-5 py-3 font-semibold text-white transition rounded-lg bg-slate-900 hover:bg-slate-800">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeOEj-jI40fscwo9memaMbL9ConldTthiJvY-vEp3hdWp7MAQ/viewform"
+           target="_blank" rel="noopener"
+           class="inline-flex items-center px-5 py-3 font-semibold text-white transition rounded-lg bg-slate-900 hover:bg-slate-800">
           Ask a Question
         </a>
+        <p class="mt-3 text-sm text-slate-500">
+          or email <a href="mailto:leaders@pack57paloalto.com" class="text-cub-blue underline decoration-cub-blue/30 underline-offset-2 hover:decoration-cub-blue">leaders@pack57paloalto.com</a>
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- HOW TO JOIN -->
-<section class="bg-slate-50">
-  <div class="max-w-6xl px-4 py-16 mx-auto">
-    <h2 class="text-3xl font-extrabold tracking-wide text-center uppercase sm:text-4xl text-cub-blue">How to Join</h2>
-    <div class="grid gap-6 mt-10 md:grid-cols-4">
-      <div class="p-6 text-center bg-white rounded-2xl ring-1 ring-slate-200">
-        <div class="text-3xl">📝</div>
-        <p class="mt-3 font-semibold">1) Register</p>
-        <p class="mt-1 text-sm text-slate-600">Fill out a quick online form.</p>
-      </div>
-      <div class="p-6 text-center bg-white rounded-2xl ring-1 ring-slate-200">
-        <div class="text-3xl">👋</div>
-        <p class="mt-3 font-semibold">2) Visit</p>
-        <p class="mt-1 text-sm text-slate-600">Come to an open house or den meeting.</p>
-      </div>
-      <div class="p-6 text-center bg-white rounded-2xl ring-1 ring-slate-200">
-        <div class="text-3xl">🎽</div>
-        <p class="mt-3 font-semibold">3) Uniform</p>
-        <p class="mt-1 text-sm text-slate-600">Grab the handbook & uniform basics.</p>
-      </div>
-      <div class="p-6 text-center bg-white rounded-2xl ring-1 ring-slate-200">
-        <div class="text-3xl">🚀</div>
-        <p class="mt-3 font-semibold">4) Start!</p>
-        <p class="mt-1 text-sm text-slate-600">Jump into adventures with your den.</p>
-      </div>
-    </div>
-    <div class="mt-8 text-center">
-      <a href="/join" class="inline-flex items-center px-6 py-3 font-bold transition bg-yellow-400 rounded-xl text-cub-blue hover:bg-yellow-300">
-        Join Pack 57
-      </a>
-    </div>
-  </div>
-</section>
 
 <!-- TESTIMONIALS -->
 <section class="max-w-6xl px-4 py-16 mx-auto">

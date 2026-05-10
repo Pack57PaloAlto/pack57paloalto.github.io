@@ -1,181 +1,96 @@
 ---
 layout: default
 title: Join Pack 57
-subtitle: Begin Your Scouting Adventure
+hideTitle: true
 ---
-<div class="max-w-3xl mx-auto mt-8">
-    <div class="p-4 border-l-4 rounded-r-lg bg-blue-50 border-cub-blue">
-        <div class="flex">
-            <div class="flex-shrink-0">
-                <svg class="w-5 h-5 text-cub-blue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
-                </svg>
+
+<!-- HERO: Half-fanned pair preview + download -->
+<section class="px-4 mt-6 sm:px-6 lg:px-8">
+  <div class="max-w-6xl mx-auto overflow-hidden rounded-3xl bg-cub-blue">
+    <div class="grid items-center gap-10 px-6 py-10 sm:px-10 sm:py-14 lg:grid-cols-[1.15fr_1fr] lg:gap-14 lg:px-14">
+
+      <!-- Visual: half-fanned pair -->
+      <div class="order-2 lg:order-1">
+        <a href="/assets/docs/pack57-2026-2027-overview.pdf"
+           target="_blank" rel="noopener"
+           class="block group py-6"
+           aria-label="Download Pack 57's 2026 to 2027 program overview as a PDF">
+          <div class="relative max-w-[88%] mx-auto">
+            <div class="absolute inset-x-0 top-0 overflow-hidden bg-white rounded-xl shadow-xl ring-1 ring-white/10 transform translate-x-6 translate-y-3 rotate-3 opacity-90">
+              <img src="/assets/images/pack57-overview-preview-2-top.png"
+                   alt="Top of page 2 of the program overview"
+                   class="w-full h-auto" />
+              <div class="px-4 py-2 text-[10px] tracking-[0.2em] uppercase text-cub-blue/60 border-t border-slate-200">
+                Page 2
+              </div>
             </div>
-            <div class="ml-3">
-                <h3 class="p-0 m-0 text-sm font-medium text-cub-blue">Time Commitment for Families</h3>
-                <div class="mt-2 text-sm text-gray-700">
-                <p>
-                Cub Scouts makes it easy for families to jump into the adventure without overwhelming your schedule! 
-                </p>
-                <p class="mt-2">
-                On average, families spend about 2 hours a week enjoying all the fun, growth, and friendship that Scouting offers.
-                </p>
-                <p class="mt-2">
-                Here’s what a typical month looks like:
-                </p>
-                <ul class="pl-5 mt-2 space-y-1 list-disc">
-                <li>Monthly pack meetings where the whole group comes together (1-2 hours each)</li>
-                <li>Smaller group meetings of 5-10 similar-age scouts, 2-3 times each month (1-2 hours each)</li>
-                <li>Special adventures like camping trips that bring the program to life (2–4 weekends per year)</li>
-                </ul>
-                <p class="mt-2">
-                Cub Scouts is a family adventure. Parents play an active role in helping their Scout try new things, build confidence and celebrate achievements. Every scout must be accompanied and supported by a parent or another caring adult. Siblings always welcome.
-                </p>
-                </div>
+            <div class="relative overflow-hidden bg-white rounded-xl shadow-2xl ring-1 ring-white/10 transform -rotate-2 transition-transform group-hover:-translate-y-1">
+              <img src="/assets/images/pack57-overview-preview-1-top.png"
+                   alt="Top of page 1 of the program overview"
+                   class="w-full h-auto" />
+              <div class="px-4 py-2 text-[10px] tracking-[0.2em] uppercase text-cub-blue/70 border-t border-slate-200 flex items-center justify-between">
+                <span>Preview · click to read full overview</span>
+                <span aria-hidden="true">↓</span>
+              </div>
             </div>
-        </div>
-    </div>
-</div>
-
-<div class="px-4 mt-10 sm:px-6 lg:px-8">
-    <div class="max-w-3xl mx-auto">
-        <div class="overflow-hidden bg-white rounded-lg shadow-md">
-            <div class="px-6 py-8">
-                <h2 class="mt-0 mb-6 text-2xl font-bold text-cub-blue">How to Join Pack 57</h2>
-
-                <div class="space-y-8">
-                    <div class="grid grid-cols-[auto_1fr] gap-x-4">
-                        <div class="flex items-center justify-center w-12 h-12 row-span-2 text-white rounded-full bg-cub-blue">
-                            <span class="text-xl font-bold">1</span>
-                        </div>
-                        <div class="self-end">
-                            <h3 class="mt-2 mt-3 text-lg font-medium text-cub-blue">📝 Complete the Application Form</h3>
-                        </div>
-                        <div>
-                            <p class="text-gray-600">
-                                Fill out the <a class="text-blue-600 hover:underline" href="https://docs.google.com/forms/d/e/1FAIpQLScIuZbCz-744T95AzGs10x8-v5PW-xrizV1YpOftV2eyhzSXg/viewform">Incoming Family Survey</a>. If you have any questions, please contact our leadership team through our <a href="/contact" class="text-blue-600 hover:underline">Contact page</a>.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-[auto_1fr] gap-x-4">
-                        <div class="flex items-center justify-center w-12 h-12 row-span-2 text-white rounded-full bg-cub-blue">
-                            <span class="text-xl font-bold">2</span>
-                        </div>
-                        <div class="self-end">
-                            <h3 class="mt-2 text-lg font-medium text-cub-blue">👋 Attend a Pack Meeting</h3>
-                        </div>
-                        <div>
-                            <p class="text-gray-600">
-                                Come to one of our pack meetings to experience Cub Scouting firsthand!
-                                You'll meet other scouts, parents, and leaders who can answer your questions.
-                                Check our <a href="/calendar" class="text-blue-600 hover:underline">Calendar</a> for upcoming meetings and email your age-appropriate Den Leader or Cubmaster.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-[auto_1fr] gap-x-4">
-                        <div class="flex items-center justify-center w-12 h-12 row-span-2 text-white rounded-full bg-cub-blue">
-                            <span class="text-xl font-bold">3</span>
-                        </div>
-                        <div class="self-end">
-                            <h3 class="mt-2 text-lg font-medium text-cub-blue">👕 Get Your Uniform and Register for Scouts</h3>
-                        </div>
-                        <div>
-                            <p class="text-gray-600">
-                                Purchase your Scout uniform (we will give you a handbook!). These are essential tools of the Scouting program
-                                that create a sense of belonging and provide guidance for advancement. Each grade level has a specific
-                                uniform and handbook.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-[auto_1fr] gap-x-4">
-                        <div class="flex items-center justify-center w-12 h-12 row-span-2 text-white rounded-full bg-cub-blue">
-                            <span class="text-xl font-bold">4</span>
-                        </div>
-                        <div class="self-end">
-                            <h3 class="mt-2 text-lg font-medium text-cub-blue">🏕️ Start Your Adventure!</h3>
-                        </div>
-                        <div>
-                            <p class="text-gray-600">
-                                Begin participating in den meetings, pack activities, and outdoor adventures. Your Cub Scout will
-                                start earning badges and awards while building skills and making friends that can last a lifetime.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    
-
-    <div class="max-w-3xl mx-auto mt-12">
-        <div class="overflow-hidden bg-white rounded-lg shadow-md">
-            <div class="px-6 py-8">
-                <h2 class="mb-6 text-2xl font-bold text-cub-blue">An Investment in Your Child's Future</h2>
-
-                <p class="mb-6 text-gray-600">
-                    When compared to the cost of sports and many other youth activities, Scouting delivers exceptional value!
-                    Your investment helps provide a program that builds character, teaches citizenship, develops leadership skills,
-                    and creates memories that last a lifetime.
-                </p>
-
-                <div class="space-y-6">
-                    <div>
-                        <h3 class="text-lg font-medium text-cub-blue">💳 Scouting America Membership Fees</h3>
-                        <p class="mt-2 text-gray-600">
-                            The annual national registration fee is <b>$170</b> (National &amp; Council registration). For just <b>$15</b> more, your Scout
-                            can receive a year's subscription to Scout Life magazine – a great resource filled with adventures,
-                            stories, and activities.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 class="text-lg font-medium text-cub-blue">🐾 Pack Dues</h3>
-                        <p class="mt-2 text-gray-600">
-                            Pack 57 collects modest dues of <b>$170</b> (2026-27) to cover the costs of awards, the handbook, recognition items, craft supplies, renting our space,
-                            and special events. Our pack committee, made up of parents just like you, establishes these dues
-                            to keep the program affordable while providing quality experiences.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 class="text-lg font-medium text-cub-blue">👕 Uniform and Handbook</h3>
-                        <p class="mt-2 text-gray-600">
-                            Uniform (shirt & neckerchief) ~ $80; Handbook included with dues. Pack 57 provides the handbook but not the uniform out of your dues.
-                            We also have a uniform bank of lightly used uniforms - if you are interested please <a class="text-blue-600 hover:underline" href="/contact">contact</a> us.
-                            The handbook contains all required and elective adventures for each rank and serves as your
-                            Scout's record of achievement. Uniforms create a sense of belonging, equality and unity within the pack.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 class="text-lg font-medium text-cub-blue">🏕️ Activities and Events</h3>
-                        <p class="mt-2 text-gray-600">
-                            Some activities like camping trips, field trips, day camps, and special events may have
-                            additional costs. These are always optional, and our pack often conducts fundraisers to help
-                            offset these expenses for families.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 class="text-lg font-medium text-cub-blue">🤝 Financial Assistance</h3>
-                        <p class="mt-2 text-gray-600">
-                            We believe every child should have the opportunity to be a Scout. If you need financial
-                            assistance, please speak with our pack leadership. Various forms of support are available,
-                            including payment plans, fundraising opportunities, and potential scholarships.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="mt-10 text-center">
-        <a href="/contact" class="inline-block px-6 py-3 text-base font-medium text-white border border-transparent rounded-md shadow-md bg-cub-blue hover:bg-blue-700">
-            Contact Us with Any Questions
+          </div>
         </a>
+      </div>
+
+      <!-- Copy + download CTA -->
+      <div class="order-1 lg:order-2">
+        <h1 class="mt-0 mb-0 text-4xl font-extrabold tracking-[0.08em] uppercase text-cub-gold sm:text-5xl">
+          Our year, at a glance.
+        </h1>
+
+        <div class="mt-8">
+          <a href="/assets/docs/pack57-2026-2027-overview.pdf"
+           target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center gap-2 px-7 py-4 font-bold transition bg-cub-gold rounded-xl text-cub-blue hover:bg-yellow-300">
+            <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v8.586l2.293-2.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L9 12.586V4a1 1 0 011-1zM4 16a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1z" clip-rule="evenodd" />
+            </svg>
+            Download the 2026–27 overview
+          </a>
+        </div>
+      </div>
+
     </div>
-</div>
+  </div>
+</section>
+
+<!-- TWO CTAs -->
+<section class="px-4 mt-12 mb-12 sm:px-6 lg:px-8 sm:mt-16">
+  <div class="grid max-w-6xl gap-6 mx-auto md:grid-cols-2">
+
+    <a href="/register"
+       class="group block p-8 transition rounded-2xl bg-cub-gold ring-1 ring-cub-gold hover:bg-yellow-300">
+      <h2 class="mt-0 mb-0 text-2xl font-extrabold tracking-tight text-cub-blue sm:text-3xl">
+        Sign up for Pack 57
+      </h2>
+      <p class="mt-3 text-cub-blue/90">
+        Four short steps to register your scout for the year. We'll walk you through each one.
+      </p>
+      <span class="inline-flex items-center gap-1 mt-6 font-bold text-cub-blue">
+        See the steps
+        <span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span>
+      </span>
+    </a>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeOEj-jI40fscwo9memaMbL9ConldTthiJvY-vEp3hdWp7MAQ/viewform"
+       target="_blank" rel="noopener"
+       class="group block p-8 transition bg-white rounded-2xl ring-1 ring-cub-blue/20 hover:ring-cub-blue">
+      <h2 class="mt-0 mb-0 text-2xl font-extrabold tracking-tight text-cub-blue sm:text-3xl">
+        Contact us to learn more
+      </h2>
+      <p class="mt-3 text-slate-600">
+        Talk to a parent leader, ask anything, or arrange to visit a meeting first — no commitment.
+      </p>
+      <span class="inline-flex items-center gap-1 mt-6 font-bold text-cub-blue">
+        Get in touch
+        <span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span>
+      </span>
+    </a>
+
+  </div>
+</section>
