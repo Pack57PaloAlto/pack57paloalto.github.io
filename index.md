@@ -254,47 +254,19 @@ navbarText: Palo Alto, CA
         </div>
       </div>
       <div class="mt-6">
-        <a href="/contact" class="inline-flex items-center px-5 py-3 font-semibold text-white transition rounded-lg bg-slate-900 hover:bg-slate-800">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeOEj-jI40fscwo9memaMbL9ConldTthiJvY-vEp3hdWp7MAQ/viewform"
+           target="_blank" rel="noopener"
+           class="inline-flex items-center px-5 py-3 font-semibold text-white transition rounded-lg bg-slate-900 hover:bg-slate-800">
           Ask a Question
         </a>
+        <p class="mt-3 text-sm text-slate-500">
+          or email <a href="mailto:leaders@pack57paloalto.com" class="text-cub-blue underline decoration-cub-blue/30 underline-offset-2 hover:decoration-cub-blue">leaders@pack57paloalto.com</a>
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- HOW TO JOIN -->
-<section class="bg-slate-50">
-  <div class="max-w-6xl px-4 py-16 mx-auto">
-    <h2 class="text-3xl font-extrabold tracking-wide text-center uppercase sm:text-4xl text-cub-blue">How to Join</h2>
-    <div class="grid gap-6 mt-10 md:grid-cols-4">
-      <div class="p-6 text-center bg-white rounded-2xl ring-1 ring-slate-200">
-        <div class="text-3xl">📝</div>
-        <p class="mt-3 font-semibold">1) Register</p>
-        <p class="mt-1 text-sm text-slate-600">Fill out a quick online form.</p>
-      </div>
-      <div class="p-6 text-center bg-white rounded-2xl ring-1 ring-slate-200">
-        <div class="text-3xl">👋</div>
-        <p class="mt-3 font-semibold">2) Visit</p>
-        <p class="mt-1 text-sm text-slate-600">Come to an open house or den meeting.</p>
-      </div>
-      <div class="p-6 text-center bg-white rounded-2xl ring-1 ring-slate-200">
-        <div class="text-3xl">🎽</div>
-        <p class="mt-3 font-semibold">3) Uniform</p>
-        <p class="mt-1 text-sm text-slate-600">Grab the handbook & uniform basics.</p>
-      </div>
-      <div class="p-6 text-center bg-white rounded-2xl ring-1 ring-slate-200">
-        <div class="text-3xl">🚀</div>
-        <p class="mt-3 font-semibold">4) Start!</p>
-        <p class="mt-1 text-sm text-slate-600">Jump into adventures with your den.</p>
-      </div>
-    </div>
-    <div class="mt-8 text-center">
-      <a href="/join" class="inline-flex items-center px-6 py-3 font-bold transition bg-yellow-400 rounded-xl text-cub-blue hover:bg-yellow-300">
-        Join Pack 57
-      </a>
-    </div>
-  </div>
-</section>
 
 <!-- TESTIMONIALS -->
 <section class="max-w-6xl px-4 py-16 mx-auto">
