@@ -101,7 +101,7 @@ permalink: /register/
           <div class="flex gap-2"><dt class="font-semibold text-cub-blue/80 min-w-24">Where:</dt><dd>Pack 57 Google Form</dd></div>
           <div class="flex gap-2"><dt class="font-semibold text-cub-blue/80 min-w-24">Done when:</dt><dd>You submit the form</dd></div>
         </dl>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScIuZbCz-744T95AzGs10x8-v5PW-xrizV1YpOftV2eyhzSXg/viewform"
+        <a href="https://forms.gle/3BpSYft6z8dir7s16"
            target="_blank" rel="noopener"
            class="flex items-baseline justify-between gap-4 px-5 py-4 mt-6 transition rounded-xl bg-cub-blue ring-1 ring-cub-blue hover:bg-blue-900">
           <span class="text-xs font-semibold tracking-[0.2em] uppercase text-cub-gold/90">Open the Annual Information Form</span>
