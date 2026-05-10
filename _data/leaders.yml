@@ -6,50 +6,45 @@
 #     image: Path to profile image
 #     ring_color: Tailwind color for the ring around the image
 
-- name: Rich P.
-  role: Cubmaster, Den Leader (AOL)
-  image: /assets/images/richp.png
-  ring_color: red-700
-
 - name: Jake H.
-  role: Assistant Cubmaster, Den Leader (Lions)
+  role: Cubmaster, Den Leader (Tigers)
   image: /assets/images/jakeh.png
   ring_color: yellow-400
 
-- name: Camilla A.
-  role: Den Leader (Tigers)
-  image: /assets/images/tigerleader.png
-  ring_color: amber-600
-
 - name: Erin H.
+  role: Committee Chair
+  image: /assets/images/erinh.png
+  ring_color: slate-400
+
+- name: Lindy W.
+  role: Chartered Organization Representative, Den Leader (AOL)
+  image: /assets/images/lindyw.png
+  ring_color: slate-500
+
+- name: Annie L.
+  role: Treasurer
+  image: /assets/images/anniel.png
+  ring_color: yellow-700
+
+- name: Daniel C.
+  role: Den Leader (Lions)
+  image: /assets/images/lionleader.png
+  ring_color: yellow-400
+
+- name: Camilla A.
   role: Den Leader (Wolves)
   image: /assets/images/wolfleader.png
   ring_color: slate-400
 
-- name: Pat S.
-  role: Den Leader (Bears and Webelos)
+- name: Fiona M.
+  role: Den Leader (Bears)
   image: /assets/images/bearleader.png
   ring_color: stone-800
 
-- name: Jyothi M.
-  role: Committee Chair
-  image: /assets/images/jyothim.png
+- name: Pat S.
+  role: Den Leader (Webelos)
+  image: /assets/images/webelosleader.png
   ring_color: slate-500
-
-- name: Lindy W.
-  role: Recruitment Chair
-  image: /assets/images/lindyw.png
-  ring_color: slate-500
-
-- name: David T.
-  role: Treasurer / Chartered Organization Representative
-  image: /assets/images/davidt.png
-  ring_color: slate-500
-
-- name: Zachary A.
-  role: Den Chief
-  image: /assets/images/denchief.png
-  ring_color: yellow-700
 
 - name: You?
   role: ""

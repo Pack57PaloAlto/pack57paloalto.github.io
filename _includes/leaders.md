@@ -6,7 +6,7 @@ Parameters:
 
 ## Meet the Leaders
 
-Caring, trained volunteers who make the adventure happen.
+Pack 57 is run by parents — every leader below is also a Pack 57 family.
 
 <div class="grid gap-6 mt-6 sm:grid-cols-2" markdown="0">
 
