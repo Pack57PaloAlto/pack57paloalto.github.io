@@ -20,10 +20,38 @@ permalink: /register/
 
     <div class="grid gap-6 md:grid-cols-2">
 
-      <!-- STEP 1 · Pack 57 dues -->
+      <!-- STEP 1 · Annual scout info form -->
       <article class="flex flex-col p-8 bg-white rounded-2xl ring-1 ring-slate-200">
         <div class="flex items-center justify-between">
           <span class="inline-flex items-center justify-center w-12 h-12 text-xl font-extrabold rounded-full bg-cub-blue text-cub-gold">1</span>
+          <span class="text-xs font-semibold tracking-[0.2em] uppercase text-cub-blue/60">~10 minutes</span>
+        </div>
+        <h3 class="mt-5 mb-0 text-xl font-bold tracking-[0.1em] uppercase text-cub-blue">
+          Tell us about your scout
+        </h3>
+        <p class="mt-3 text-slate-600">
+          Emergency contacts, allergies, photo permissions, and what den they're joining — collected through our Annual Scout Information Form.
+          Required every year so we have current info on file.
+        </p>
+        <p class="mt-3 text-sm text-slate-500">
+          The form also walks you through the two dues payments below, so start here and it will tell you what's left.
+        </p>
+        <dl class="mt-5 text-sm text-slate-500 space-y-1">
+          <div class="flex gap-2"><dt class="font-semibold text-cub-blue/80 min-w-24">Where:</dt><dd>Pack 57 Google Form</dd></div>
+          <div class="flex gap-2"><dt class="font-semibold text-cub-blue/80 min-w-24">Done when:</dt><dd>You submit the form</dd></div>
+        </dl>
+        <a href="https://forms.gle/3BpSYft6z8dir7s16"
+           target="_blank" rel="noopener"
+           class="flex items-baseline justify-between gap-4 px-5 py-4 mt-6 transition rounded-xl bg-cub-blue ring-1 ring-cub-blue hover:bg-blue-900">
+          <span class="text-xs font-semibold tracking-[0.2em] uppercase text-cub-gold/90">Open the Annual Information Form</span>
+          <span class="text-cub-gold" aria-hidden="true">→</span>
+        </a>
+      </article>
+
+      <!-- STEP 2 · Pack 57 dues -->
+      <article class="flex flex-col p-8 bg-white rounded-2xl ring-1 ring-slate-200">
+        <div class="flex items-center justify-between">
+          <span class="inline-flex items-center justify-center w-12 h-12 text-xl font-extrabold rounded-full bg-cub-blue text-cub-gold">2</span>
           <span class="text-xs font-semibold tracking-[0.2em] uppercase text-cub-blue/60">~5 minutes</span>
         </div>
         <h3 class="mt-5 mb-0 text-xl font-bold tracking-[0.1em] uppercase text-cub-blue">
@@ -55,10 +83,10 @@ permalink: /register/
         </p>
       </article>
 
-      <!-- STEP 2 · National dues -->
+      <!-- STEP 3 · National dues -->
       <article class="flex flex-col p-8 bg-white rounded-2xl ring-1 ring-slate-200">
         <div class="flex items-center justify-between">
-          <span class="inline-flex items-center justify-center w-12 h-12 text-xl font-extrabold rounded-full bg-cub-blue text-cub-gold">2</span>
+          <span class="inline-flex items-center justify-center w-12 h-12 text-xl font-extrabold rounded-full bg-cub-blue text-cub-gold">3</span>
           <span class="text-xs font-semibold tracking-[0.2em] uppercase text-cub-blue/60">~10 minutes</span>
         </div>
         <h3 class="mt-5 mb-0 text-xl font-bold tracking-[0.1em] uppercase text-cub-blue">
@@ -82,31 +110,6 @@ permalink: /register/
             <span class="text-xl font-extrabold text-cub-gold">$170</span>
           </a>
         </div>
-      </article>
-
-      <!-- STEP 3 · Annual scout info form -->
-      <article class="flex flex-col p-8 bg-white rounded-2xl ring-1 ring-slate-200">
-        <div class="flex items-center justify-between">
-          <span class="inline-flex items-center justify-center w-12 h-12 text-xl font-extrabold rounded-full bg-cub-blue text-cub-gold">3</span>
-          <span class="text-xs font-semibold tracking-[0.2em] uppercase text-cub-blue/60">~10 minutes</span>
-        </div>
-        <h3 class="mt-5 mb-0 text-xl font-bold tracking-[0.1em] uppercase text-cub-blue">
-          Tell us about your scout
-        </h3>
-        <p class="mt-3 text-slate-600">
-          Emergency contacts, allergies, photo permissions, and what den they're joining — collected through our Annual Scout Information Form.
-          Required every year so we have current info on file.
-        </p>
-        <dl class="mt-5 text-sm text-slate-500 space-y-1">
-          <div class="flex gap-2"><dt class="font-semibold text-cub-blue/80 min-w-24">Where:</dt><dd>Pack 57 Google Form</dd></div>
-          <div class="flex gap-2"><dt class="font-semibold text-cub-blue/80 min-w-24">Done when:</dt><dd>You submit the form</dd></div>
-        </dl>
-        <a href="https://forms.gle/3BpSYft6z8dir7s16"
-           target="_blank" rel="noopener"
-           class="flex items-baseline justify-between gap-4 px-5 py-4 mt-6 transition rounded-xl bg-cub-blue ring-1 ring-cub-blue hover:bg-blue-900">
-          <span class="text-xs font-semibold tracking-[0.2em] uppercase text-cub-gold/90">Open the Annual Information Form</span>
-          <span class="text-cub-gold" aria-hidden="true">→</span>
-        </a>
       </article>
 
       <!-- STEP 4 · Uniform -->
